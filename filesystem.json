@@ -1,0 +1,22 @@
+{
+    "current_directory": "/",
+    "users": {
+        "root": {
+            "password": "root",
+            "permissions": {
+                "read": true,
+                "edit": true
+            }
+        },
+        "user1": {
+            "password": "1234",
+            "permissions": {
+                "read": false,
+                "edit": false
+            }
+        }
+    },
+    "files": {},
+    "directories": {},
+    "current_user": "user1"
+}

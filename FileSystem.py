@@ -3,7 +3,7 @@ import json
 # Функція для завантаження даних з JSON-файлу
 def load_data():
     try:
-        with open('../../Desktop/filesystem.json') as file:
+        with open('filesystem.json') as file:
             data = json.load(file)
     except FileNotFoundError:
         data = {
