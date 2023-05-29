@@ -201,6 +201,17 @@ def rm(data):
     else:
         print('Item not found')
 
+# Функція для читання вмісту файла
+def read(data):
+    file_name = input('Enter file name: ')
+    current_directory = data['current_directory']
+
+    if file_name in data['files'] and current_directory == data['files'][file_name]['parent']:
+        file_content = data['files'][file_name]['content']
+        print(f'Content of file {file_name}:')
+        print(file_content)
+    else:
+        print('File not found')
 
 # Функція для виходу з облікового запису користувача
 def logout(data):
@@ -229,6 +240,7 @@ def main():
         'cd': cd,
         'change_perm': change_permissions,
         'rm': rm,
+        'read': read,
         'logout': logout,
         'exit': exit_program
     }
