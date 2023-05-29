@@ -213,6 +213,21 @@ def read(data):
     else:
         print('File not found')
 
+
+# Функція для видалення облікового запису користувача
+def delete_user(data):
+    username = data['current_user']
+    password = input('Enter password to confirm account deletion: ')
+
+    if check_password(data, username, password):
+        del data['users'][username]
+        data['current_user'] = None
+        data['current_directory'] = '/'
+        print(f'User {username} deleted')
+    else:
+        print('Invalid password')
+
+
 # Функція для виходу з облікового запису користувача
 def logout(data):
     data['current_user'] = None
@@ -241,6 +256,7 @@ def main():
         'change_perm': change_permissions,
         'rm': rm,
         'read': read,
+        'delete_user': delete_user,
         'logout': logout,
         'exit': exit_program
     }
